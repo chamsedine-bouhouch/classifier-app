@@ -1,10 +1,7 @@
 from django.shortcuts import redirect, render  
 from image_app.forms import UserImageForm  
 from .models import UploadImage ,Result
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
-
-
+  
 def image_request(request):  
     if request.method == 'POST':  
         form = UserImageForm(request.POST, request.FILES)  
@@ -22,7 +19,3 @@ def image_request(request):
         form = UserImageForm()  
   
     return render(request, 'image_form.html', {'form': form})  
-
-    def test(request):  
-        if not request.user.is_authenticated :
-            return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
