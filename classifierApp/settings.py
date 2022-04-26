@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'image_app.apps.ImageAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,3 +126,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+  
+# Path where media is stored  
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+
+# Base url to serve media files  
+MEDIA_URL = '/media/'  
+
+LOGIN_URL= '/auth/login'
